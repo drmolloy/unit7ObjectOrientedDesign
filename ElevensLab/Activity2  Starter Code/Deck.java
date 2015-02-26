@@ -84,7 +84,11 @@ public class Deck
      */
     public Card deal()
     {
-        
+        for (int i = 0; i < cards.size(); i++)
+        {
+            return cards[];
+            size -= 1;
+        }
     }
 
     /**
@@ -92,7 +96,8 @@ public class Deck
      * @return a string representation of this deck.
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         String rtn = "size = " + size + "\nUndealt cards: \n";
 
         for (int k = size - 1; k >= 0; k--) {

@@ -84,11 +84,13 @@ public class Deck
      */
     public Card deal()
     {
-        for (int i = 0; i < cards.size(); i++)
+        if (isEmpty())
         {
-            return cards[];
-            size -= 1;
+            return null;
         }
+        size--;
+        Card card = cards.get(size);
+        return card;
     }
 
     /**

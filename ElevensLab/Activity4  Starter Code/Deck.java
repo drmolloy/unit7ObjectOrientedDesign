@@ -29,8 +29,7 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public Deck(String[] ranks, String[] suits, int[] values)
-	{
+	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new ArrayList<Card>();
 		for (int j = 0; j < ranks.length; j++) {
 			for (String suitString : suits) {
@@ -46,8 +45,7 @@ public class Deck {
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
-	public boolean isEmpty()
-	{
+	public boolean isEmpty() {
 		return size == 0;
 	}
 
@@ -55,8 +53,7 @@ public class Deck {
 	 * Accesses the number of undealt cards in this deck.
 	 * @return the number of undealt cards in this deck.
 	 */
-	public int size()
-	{
+	public int size() {
 		return size;
 	}
 
@@ -64,15 +61,16 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() 
-	{
-		int[] shuffled = new int[];
-        for (int k = 0; k <= ; k++)
-        {
-            Random random = new Random();
-            int j = random.nextInt(values.length);
-            shuffled[k] = values[j];
-        }
+	public void shuffle() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for (int k =cards.size() - 1; k>0;k--)
+		{
+		    int r = (int)(Math.random() * k);
+		    Card tempCard = cards.get(k);
+		    cards.set(k,cards.get(r));
+		    cards.set(r,tempCard);
+		}
+		size = cards.size();
 	}
 
 	/**
@@ -80,10 +78,8 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() 
-	{
-		if (isEmpty()) 
-		{
+	public Card deal() {
+		if (isEmpty()) {
 			return null;
 		}
 		size--;
